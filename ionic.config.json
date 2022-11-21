@@ -1,0 +1,7 @@
+{
+  "name": "appcafixa",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
