@@ -1,3 +1,25 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-menu contentId="menuOpciones" menuId="menuOpc" side="start">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Cafixa</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <ion-list>
+
+      <ion-menu-toggle *ngFor="let desMenu of menuPrincipal | async">
+        <ion-item [routerLink]="desMenu.redireccionarPag">
+          <ion-icon slot="start" [name]="desMenu.icon"></ion-icon>
+          {{desMenu.nombre}}
+        </ion-item>
+      </ion-menu-toggle>
+
+      </ion-list>
+    </ion-content>
+
+  </ion-menu> 
+   <!-- Se coloca el identificador menuOpciones de contentId-->
+  <ion-router-outlet id="menuOpciones"></ion-router-outlet>
 </ion-app>

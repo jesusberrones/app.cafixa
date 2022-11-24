@@ -1,0 +1,12 @@
+[
+    {
+        "nombre":"Productos",
+        "icon":"cart-outline",
+        "redireccionarPag":"/productos"
+    },
+    {
+        "nombre":"Acerca",
+        "icon":"help-outline",
+        "redireccionarPag":"/acerca"
+    }
+]
