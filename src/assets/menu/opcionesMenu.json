@@ -5,6 +5,11 @@
         "redireccionarPag":"/productos"
     },
     {
+        "nombre":"Ubicacion",
+        "icon":"locate-outline",
+        "redireccionarPag":"/ubicacion"
+    },
+    {
         "nombre":"Acerca",
         "icon":"help-outline",
         "redireccionarPag":"/acerca"
