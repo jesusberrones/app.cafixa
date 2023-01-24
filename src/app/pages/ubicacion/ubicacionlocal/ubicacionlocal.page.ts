@@ -30,14 +30,15 @@ export class UbicacionlocalPage implements OnInit,OnDestroy {
   }
 
   cargarMapaLeaflet(){
-    console.log('cargando MAPA1');
+    //console.log('cargando MAPA1');
     //configuraremos su vista a nuestras coordenadas geográficas elegidas y un nivel de zoom:
      this.map = Leaflet.map('mapaId').setView([19.097152, -96.157876], 14);
 
      Leaflet.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { 
        attribution: 'edupala.com © Angular LeafLet',
      }).addTo(this.map);
-     Leaflet.marker([19.097152, -96.157876]).addTo(this.map).bindPopup('Cafixa<br> Café Veracruzano').openPopup();
+     Leaflet.marker([19.097152, -96.157876]).addTo(this.map)
+     .bindPopup('Cafixa<br> Café Veracruzano<br> Nicho de Nogal #51').openPopup();
   }
  
   //  ionViewWillLeave() {

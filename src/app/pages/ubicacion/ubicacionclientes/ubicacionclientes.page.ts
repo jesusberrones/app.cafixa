@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as mapboxgl from 'mapbox-gl';
+import { Popup } from 'mapbox-gl';
 import { environment } from '../../../../environments/environment.prod';
 
 @Component({
@@ -40,11 +41,13 @@ export class UbicacionclientesPage implements OnInit {
   mostrarMarcador(lng:number,lat:number){
     // Add zoom and rotation controls to the map.
      this.map.addControl(new mapboxgl.NavigationControl());
-     // Create a default Marker and add it to the map.
-     const marker1 = new mapboxgl.Marker({ color: 'black', rotation: 15 })
-     .setLngLat([lng, lat])
-     .addTo(this.map);
 
+     const infoPopup= new Popup().setHTML(`<h5>Cafixa</h5><br> Nicho de Nogal #41`);
+     // Create a default Marker and add it to the map.Coloca el color especificado
+     const marker1 = new mapboxgl.Marker({ color: 'black', rotation: 15})
+     .setLngLat([lng, lat])
+     .setPopup(infoPopup)
+     .addTo(this.map);  
   }
 
   ngOnDestroy() {
@@ -74,10 +77,17 @@ export class UbicacionclientesPage implements OnInit {
     
 //     // Add zoom and rotation controls to the map.
 //     map.addControl(new mapboxgl.NavigationControl());
-//     // Create a default Marker and add it to the map.
-//     const marker1 = new mapboxgl.Marker({ color: 'black', rotation: 15 })
+//     // Create a default Marker and add it to the map.Coloca el color especificado y con
+       //draggable permite mover el marcador
+//     const marker1 = new mapboxgl.Marker({ color: 'black', rotation: 15 , draggable:true})
 //     .setLngLat([-96.157876, 19.097152])
 //     .addTo(map);
+
+//Permite obtener las coordenadas cuado se mueve el marcador
+// marker1.on('drag',() =>{
+//   console.log(marker1.getLngLat());
+//  })
+
 
 //     map.resize();
 // }
